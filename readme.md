@@ -146,3 +146,33 @@ ISP/
 └── avant/          
     └── Worker.java
 ```
+
+---
+
+### DIP - Dependency Inversion Principle
+
+Ce principe stipule que les classes doivent dépendre d'interfaces plutôt que d'implémentations.
+
+Dans le contexte du cours, nous avons une classe OrderProcessor qui dépend d'une classe MySQLDatabase pour sauvegarder les commandes.
+
+#### Avant refactoring :
+- Une classe OrderProcessor dépend d'une classe MySQLDatabase pour sauvegarder les commandes.
+
+#### Après refactoring :
+- Une interface Database est créée avec une méthode saveOrder().
+- Les classes MySQLDatabase et OrderProcessor implémentent l'interface Database.
+- La classe OrderProcessor dépend d'une interface Database pour sauvegarder les commandes.
+
+#### Structure des fichiers :
+
+```
+DIP/
+├── apres/
+│   ├── Database.java
+│   ├── OrderProcessor.java
+│   └── MySQLDatabase.java
+└── avant/          
+    └── OrderProcessor.java
+```
+
+---
