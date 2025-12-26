@@ -17,8 +17,7 @@
 3. [OCP - Open/Closed Principle](#ocp-open-closed-principle)
 4. [LSP - Liskov Substitution Principle](#lsp-liskov-substitution-principle)
 5. [ISP - Interface Segregation Principle](#isp-interface-segregation-principle)
-
-
+6. [DIP - Dependency Inversion Principle](#dip-dependency-inversion-principle)
 
 ---
 
