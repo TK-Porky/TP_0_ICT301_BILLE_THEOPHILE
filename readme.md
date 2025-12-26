@@ -16,6 +16,8 @@
 2. [SRP - Single Responsibility Principle](#srp-single-responsibility-principle)
 3. [OCP - Open/Closed Principle](#ocp-open-closed-principle)
 4. [LSP - Liskov Substitution Principle](#lsp-liskov-substitution-principle)
+5. [ISP - Interface Segregation Principle](#isp-interface-segregation-principle)
+
 
 
 ---
@@ -111,4 +113,36 @@ LSP/
 │   └── Square.java
 └── avant/          
     └── Square.java
+```
+
+---
+
+### ISP - Interface Segregation Principle
+
+Ce principe stipule que les interfaces doivent être spécifiques et petites, et non grandes et génériques.
+
+Dans le contexte du cours, nous avons une interface Worker qui contient des méthodes work() et eat(). Cependant, une classe RobotWorker ne mange pas, donc elle implémente l'interface Worker sans utiliser la méthode eat().
+
+Dès lors, dans le cadre de ce TP, nous allons créer une interface Workable avec une méthode work() et une interface Eatable avec une méthode eat().
+
+#### Avant refactoring :
+- Une interface Worker contient des méthodes work() et eat().
+- Une classe RobotWorker implémente l'interface Worker sans utiliser la méthode eat().
+
+#### Après refactoring :
+- Une interface Workable est créée avec une méthode work().
+- Une interface Eatable est créée avec une méthode eat().
+- Une classe HumanWorker implémente l'interface Workable et Eatable.
+- Une classe RobotWorker implémente l'interface Workable.
+
+#### Structure des fichiers :
+
+```
+ISP/
+├── apres/
+│   ├── EntityWorker.java
+│   ├── Workable.java
+│   └── Eatable.java
+└── avant/          
+    └── Worker.java
 ```
